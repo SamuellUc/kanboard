@@ -7,14 +7,15 @@ services:
       - 3306:3306
     command: --default-authentication-plugin=mysql_native_password
     environment:
-      MYSQL_ROOT_PASSWORD: kanboard
-      MYSQL_DATABASE: kanboard
-      MYSQL_USER: kanboard
-      MYSQL_PASSWORD: kanboard
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=kanboard
+      - MYSQL_USER=kanboard
+      - MYSQL_PASSWORD=kanboard
     volumes:
-    - db:/var/lib/mysql
+      - db:/var/lib/mysql
+
   kanboard:
-    image: kanboard/kanboard:latest
+    build: .
     restart: always
     ports:
       - "80:80"
@@ -23,10 +24,10 @@ services:
       - kanboard_data:/var/www/app/data
       - kanboard_plugins:/var/www/app/plugins
       - kanboard_ssl:/etc/nginx/ssl
-    depends_on:
-      - db
     environment:
       DATABASE_URL: mysql://kanboard:kanboard@db/kanboard
+    depends_on:
+      - db
 volumes:
   kanboard_data:
   kanboard_plugins:
