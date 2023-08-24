@@ -14,7 +14,7 @@ services:
     volumes:
       - db:/var/lib/mysql
 
-  kanboard:
+  web:
     build: .
     restart: always
     ports:
