@@ -4,7 +4,7 @@ services:
     image: 'mysql:8.0.3'
     restart: always
     ports:
-      - 3306:3306
+      - 3307:3306
     command: --default-authentication-plugin=mysql_native_password
     environment:
       - MYSQL_ROOT_PASSWORD=root
@@ -14,11 +14,11 @@ services:
     volumes:
       - db:/var/lib/mysql
 
-  kanboard:
-    build: .
+  web:
+    image: kanboard/kanboard:latest
     restart: always
     ports:
-      - "80:80"
+      - "81:80"
       - "443:443"
     volumes:
       - kanboard_data:/var/www/app/data
