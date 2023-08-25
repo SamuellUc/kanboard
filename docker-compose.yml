@@ -15,7 +15,11 @@ services:
       - db:/var/lib/mysql
 
   web:
+<<<<<<< HEAD
     image: kanboard/kanboard:latest
+=======
+    build: .
+>>>>>>> d6764de50a58b74a0aa16c4f1473e7269501cc43
     restart: always
     ports:
       - "81:80"
