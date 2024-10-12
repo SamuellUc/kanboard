@@ -10,9 +10,6 @@ LABEL org.opencontainers.image.documentation=https://docs.kanboard.org
 
 VOLUME /var/www/app/data
 VOLUME /var/www/app/plugins
-VOLUME /etc/nginx/ssl
-
-EXPOSE 80 443
 
 ARG VERSION
 
