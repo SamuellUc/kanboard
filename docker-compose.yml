@@ -26,13 +26,12 @@ services:
       - kanboard_plugins:/var/www/app/plugins
       - kanboard_ssl:/etc/nginx/ssl
       # - kanboard_ssl:/etc/nginx/ssl  # Opcional: Eliminar si Nginx del host manejará SSL
-    environment:
-      DATABASE_URL: mysql://kanboard:kanboard@db/kanboard
-    depends_on:
-      - db
+    # environment:
+    #   DATABASE_URL: mysql://kanboard:kanboard@db/kanboard
+
 volumes:
   kanboard_data:
   kanboard_plugins:
   kanboard_ssl:
   # kanboard_ssl:  # Opcional
-  db:
+  # db:
