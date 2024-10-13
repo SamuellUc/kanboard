@@ -8,8 +8,6 @@ services:
       - kanboard_plugins:/var/www/app/plugins
     environment:
       DATABASE_URL: mysql://kanboard:kanboard@host.docker.internal/kanboard_db # Cambia "host.docker.internal" por "localhost" si es el mismo servidor
-    depends_on:
-      - web
 volumes:
   kanboard_data:
   kanboard_plugins:
