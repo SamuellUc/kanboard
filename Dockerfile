@@ -12,12 +12,10 @@ VOLUME /var/www/app/data
 VOLUME /var/www/app/plugins
 VOLUME /etc/nginx/ssl
 
-EXPOSE 80 443
-
 ARG VERSION
 
 RUN apk --no-cache --update add \
-    tzdata openssl unzip nginx bash ca-certificates s6 curl ssmtp mailx php82 php82-phar php82-curl \
+    tzdata openssl unzip nginx nano bash ca-certificates s6 curl ssmtp mailx php82 php82-phar php82-curl \
     php82-fpm php82-json php82-zlib php82-xml php82-dom php82-ctype php82-opcache php82-zip php82-iconv \
     php82-pdo php82-pdo_mysql php82-pdo_sqlite php82-pdo_pgsql php82-mbstring php82-session php82-bcmath \
     php82-gd php82-openssl php82-sockets php82-posix php82-ldap php82-simplexml && \
