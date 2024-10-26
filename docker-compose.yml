@@ -1,7 +1,7 @@
 services:
   web:
     network_mode: "host"
-    image: kanboard/kanboard:latest
+    image: kanboard/kanboard:v1.2.40
     restart: always
     volumes:
       - kanboard_data:/var/www/app/data
